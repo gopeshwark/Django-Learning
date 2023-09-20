@@ -3,13 +3,9 @@
 {% block start %}
 
 <div class="container">
-    {% for marks in studentMarks %}  
-        {% if forloop.counter == 1 %}
-        <h2>{{marks.student.student_name}}'s Marks Sheet</h2>
-        {% endif %} 
-    {% endfor %}
-
-    <h5>Rank: </h5>
+    <h3>{{studentMarks.first.student}}'s Marks Sheet</h3>
+        
+    <h5>Rank: {{studentMarks.first.student.studentreportcard.first.student_rank}}</h5>
     <h5>Total Marks: {{totalMarks.total_marks}}</h5>
     
     <div class="mt-5">

@@ -151,5 +151,5 @@ def get_marks(request, studentId):
     studentMarks = SubjectMarks.objects.filter(
         student__student_id__student_id=studentId)
     total_marks = studentMarks.aggregate(total_marks=Sum('marks'))
-    print(total_marks)
+
     return render(request, "reports/see_marks.html", {'studentMarks': studentMarks, 'totalMarks': total_marks})
