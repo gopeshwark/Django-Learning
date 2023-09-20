@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block start %}
+
+<div class="container">
+    {% for marks in studentMarks %}  
+        {% if forloop.counter == 1 %}
+        <h2>{{marks.student.student_name}}'s Marks Sheet</h2>
+        {% endif %} 
+    {% endfor %}
+
+    <h5>Rank: </h5>
+    <h5>Total Marks: {{totalMarks.total_marks}}</h5>
+    
+    <div class="mt-5">
+        <table class="table table-striped">
+            
+            <tbody>
+                {% for marks in studentMarks %}
+              <tr>
+                <td scope="row">{{forloop.counter}}</td>
+                <th>{{marks.subject.subject_name}}</th>
+                <td>{{marks.marks}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          
+            
+           
+         
+    </div>
+</div>
+
+
+{% endblock  %}
